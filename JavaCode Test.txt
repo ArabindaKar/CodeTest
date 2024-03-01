@@ -103,8 +103,17 @@ public class Employee{
         emp.set taxamount(0); 
         emp.setcessamount(0); 
         emp.setTotalSal(0);
-        emp.setEmail("arabinda@gmail.com");
-         
+        //emp.setEmail("arabinda@gmail.com");
+       String email = "arabinda@gmail.com";
+        String Val = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+            boolean result = email.matches(Val);
+      if(result) {
+         emp.setEmail("arabinda@gmail.com");
+      } else {
+         System.out.println("Given email-id is not valid");
+      }
+
+
   if (isValidDate(21, 10, 2000)) 
            emp.setDoj("21,10,2023"); 
         else
@@ -112,7 +121,7 @@ public class Employee{
   
        }      
  
-       // System.out.println(emp); 
+       System.out.println(emp); 
         int sal = emp.getSalary();  
         int TotalSal = (((sal/30)*days)-6);  
          emp.setTotalSal("TotalSal");
